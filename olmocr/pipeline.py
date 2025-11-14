@@ -589,11 +589,9 @@ async def worker(args, work_queue: WorkQueue, semaphore, worker_id):
 
                     # Change the extension to .md
                     md_filename = os.path.splitext(os.path.basename(relative_path))[0] + ".md"
-                    # Get the directory path without the filename
-                    dir_path = os.path.dirname(relative_path)
 
                     # Create the output markdown path
-                    markdown_dir = os.path.join(args.workspace, "markdown", dir_path)
+                    markdown_dir = os.path.join(args.workspace, "markdown")
                     markdown_path = os.path.join(markdown_dir, md_filename)
 
                     # Create the directory structure if it doesn't exist
